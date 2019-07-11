@@ -21,6 +21,7 @@ public class Main {
         movie.act();
 
         BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
+        //System.out.println("Oalalala"+beanFactory);
         Movie movie2=beanFactory.getBean("wanted",Movie.class);
         movie2.act();
 
