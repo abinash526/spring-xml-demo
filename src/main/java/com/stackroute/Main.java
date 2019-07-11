@@ -28,8 +28,22 @@ public class Main {
         BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
         xmlBeanDefinitionReader.loadBeanDefinitions(new FileSystemResource("/home/abinash/MavinApp/SpringExercise2/src/main/resources/beans.xml"));
-        Movie movie3= ((DefaultListableBeanFactory)beanDefinitionRegistry).getBean(Movie.class);
+        Movie movie3= ((DefaultListableBeanFactory)beanDefinitionRegistry).getBean("wanted",Movie.class);
         movie3.act();
+
+        Movie movie4=context.getBean("KabirSingh",Movie.class);
+        movie4.act();
+
+        if(context.getBean("UdtaPunjab",Movie.class)==context.getBean("KabirSingh",Movie.class))
+        {
+            System.out.println("Equal");
+        }
+        else
+        {
+            System.out.println("not equal");
+        }
+
+
 
 
 
