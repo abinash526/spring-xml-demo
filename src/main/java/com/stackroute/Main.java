@@ -31,10 +31,8 @@ public class Main {
         Movie movie3= ((DefaultListableBeanFactory)beanDefinitionRegistry).getBean("wanted",Movie.class);
         movie3.act();
 
-        Movie movie4=context.getBean("KabirSingh",Movie.class);
-        movie4.act();
 
-        if(context.getBean("UdtaPunjab",Movie.class)==context.getBean("KabirSingh",Movie.class))
+        if(context.getBean("wanted",Movie.class)==context.getBean("wanted",Movie.class))
         {
             System.out.println("Equal");
         }
