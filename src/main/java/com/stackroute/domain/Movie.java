@@ -7,14 +7,19 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Movie /*implements ApplicationContextAware, BeanFactoryAware, BeanNameAware */{
+public class Movie implements/* ApplicationContextAware, BeanFactoryAware,*/ BeanNameAware {
     public void init()
     {
-        System.out.println("Movie class initialized");
+        System.out.println(nameOfBean+"  initialized");
+    }
+    public void destroy()
+    {
+        System.out.println(nameOfBean+" Destroyed Movie ");
     }
 
 
     Actor actor;
+    String nameOfBean;
     private ApplicationContext applicationContext;
     public Movie(){}
 
@@ -30,6 +35,11 @@ public class Movie /*implements ApplicationContextAware, BeanFactoryAware, BeanN
     public Movie setActor(Actor actor) {
         this.actor = actor;
         return this;
+    }
+
+    public void setBeanName(String s) {
+        nameOfBean=s;
+
     }
 //    public void setBeanName(String beanName) {
 //        System.out.println("Name of the bean is:-"+beanName);}

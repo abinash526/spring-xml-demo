@@ -5,7 +5,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
     public void afterPropertiesSet() throws Exception {
-        System.out.println("-------bean is Undergoing Initilization-------");
+        System.out.println("-------bean is Undergoing Initilization in lifeCycle Class-------");
 
     }
     public void customInit()
@@ -18,7 +18,7 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
     }
 
     public void destroy() throws Exception {
-        System.out.println("====Undergoing destruction=====");
+        System.out.println("====Undergoing destruction in lifeCycle Class=====");
 
     }
 }
