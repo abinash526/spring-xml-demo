@@ -20,27 +20,17 @@ public class Main {
         Movie movie=context.getBean("wanted",Movie.class);
         movie.act();
 
-        BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        //System.out.println("Oalalala"+beanFactory);
-        Movie movie2=beanFactory.getBean("wanted",Movie.class);
-        movie2.act();
 
 
-        BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
-        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        xmlBeanDefinitionReader.loadBeanDefinitions(new FileSystemResource("/home/abinash/MavinApp/SpringExercise2/src/main/resources/beans.xml"));
-        Movie movie3= ((DefaultListableBeanFactory)beanDefinitionRegistry).getBean("wanted",Movie.class);
-        movie3.act();
-
-
-        if(context.getBean("wanted",Movie.class)==context.getBean("wanted",Movie.class))
+        /*if(context.getBean("wanted",Movie.class)==context.getBean("wanted",Movie.class))
         {
             System.out.println("Equal");
         }
         else
         {
             System.out.println("not equal");
-        }
+        }*/
+        context.getBean("beanLifeCycle");
 
 
 

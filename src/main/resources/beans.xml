@@ -11,12 +11,13 @@
         <property name="gender" value="male"></property>
         <property name="age" value="52"></property>
     </bean>
-    <bean id="wanted" class="com.stackroute.domain.Movie" scope="prototype" autowire="byType">
+    <bean id="wanted" class="com.stackroute.domain.Movie" scope="prototype" autowire="byType" init-method="init">
     </bean>
 
     <bean id="dabangg" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
     </bean>
 
+    <bean id="beanLifeCycle" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy"></bean>
 
 
 
